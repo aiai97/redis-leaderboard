@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: redis-leaderboard
+
+server:
+  port: 8080
+
+leaderboard:
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    timeout-millis: 2000
+  key: ${LEADERBOARD_KEY:leaderboard:global}
+
+logging:
+  level:
+    com.example.leaderboard: INFO
