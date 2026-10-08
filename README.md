@@ -95,3 +95,4 @@ Inspect the ZSET in Redis directly (scores are ordered from highest to lowest):
 ```bash
 docker compose exec redis redis-cli ZREVRANGE leaderboard:global 0 -1 WITHSCORES
 ```
+# redis-leaderboard
