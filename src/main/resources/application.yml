@@ -12,6 +12,22 @@ leaderboard:
     timeout-millis: 2000
   key: ${LEADERBOARD_KEY:leaderboard:global}
 
+redis-use-cases:
+  rate-limit:
+    requests: ${RATE_LIMIT_REQUESTS:10}
+    window-seconds: ${RATE_LIMIT_WINDOW_SECONDS:60}
+  lock:
+    lease-millis: ${LOCK_LEASE_MILLIS:10000}
+  batch:
+    stream-key: ${BATCH_STREAM_KEY:batch-jobs}
+    group: ${BATCH_STREAM_GROUP:batch-workers}
+    poll-delay-millis: ${BATCH_POLL_DELAY_MILLIS:1000}
+    claim-idle-millis: ${BATCH_CLAIM_IDLE_MILLIS:30000}
+  cache:
+    ttl-seconds: ${PRODUCT_CACHE_TTL_SECONDS:300}
+  session:
+    ttl-seconds: ${SESSION_TTL_SECONDS:1800}
+
 logging:
   level:
     com.example.leaderboard: INFO
